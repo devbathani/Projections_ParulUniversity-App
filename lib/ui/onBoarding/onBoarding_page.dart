@@ -34,14 +34,16 @@ class OnBoardingScreen extends StatelessWidget {
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
-            effect: ExpandingDotsEffect(
+            effect: JumpingDotEffect(
+              spacing: w * 0.04,
               activeDotColor: Colors.blue,
               dotColor: Colors.cyan,
-              dotHeight: h * 0.01,
-              dotWidth: w * 0.02,
-              paintStyle: PaintingStyle.fill,
+              dotHeight: h * 0.018,
+              dotWidth: w * 0.035,
+              jumpScale: h * 0.0025,
+              strokeWidth: w * 0.02,
             ),
-          )
+          ),
         ],
       ),
     );

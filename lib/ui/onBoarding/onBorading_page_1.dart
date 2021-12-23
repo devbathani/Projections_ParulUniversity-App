@@ -9,41 +9,42 @@ class OnBoardingPage1 extends StatelessWidget {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: w * 0.12,
-                vertical: h * 0.05,
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    "Explore the ",
-                    style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                        fontSize: w / 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "PROJECTIONS",
-                    style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                        color: Colors.cyan,
-                        fontSize: w / 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: w * 0.12,
+              vertical: h * 0.05,
             ),
-          ],
-        ));
+            child: Row(
+              children: [
+                Text(
+                  "Explore the ",
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: w / 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  "PROJECTIONS",
+                  style: GoogleFonts.roboto(
+                    textStyle: TextStyle(
+                      color: Colors.cyan,
+                      fontSize: w / 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

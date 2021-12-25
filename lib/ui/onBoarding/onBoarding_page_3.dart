@@ -33,4 +33,4 @@ class OnBoardingPage3 extends StatelessWidget {
       ),
     );
   }
-}
+} 

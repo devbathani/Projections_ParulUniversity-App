@@ -13,34 +13,36 @@ class OnBoardingPage1 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: w * 0.12,
-              vertical: h * 0.05,
+          SizedBox(
+            height: h * 0.40,
+            width: double.infinity,
+            child: Image.asset(
+              'assets/onBoardingcontent_1.jpeg',
+              fit: BoxFit.cover,
             ),
-            child: Row(
-              children: [
-                Text(
-                  "Explore the ",
-                  style: GoogleFonts.poppins(
-                    textStyle: TextStyle(
-                      color: Colors.black,
-                      fontSize: w / 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+          ),
+          Container(
+            height: h * 0.48,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xff190252),
+                  Colors.white,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                "",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: w / 15,
                 ),
-                Text(
-                  "PROJECTIONS",
-                  style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                      color: Colors.cyan,
-                      fontSize: w / 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],

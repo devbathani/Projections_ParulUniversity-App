@@ -3,7 +3,7 @@
    <application
         android:label="Projections"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/projections_logo_static">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -21,10 +21,10 @@
               android:resource="@style/NormalTheme"
               />
 
-            <meta-data
+            <!-- <meta-data
               android:name="io.flutter.embedding.android.SplashScreenDrawable"
-              android:resource="@drawable/projections_splashscreen"
-              />
+              android:resource="@drawable/projections_logo_anime"
+              /> -->
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

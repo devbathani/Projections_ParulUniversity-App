@@ -5,32 +5,41 @@ class OnBoardingPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-            child: Container(
-              height: 50,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue.shade300,
+          SizedBox(
+            height: h * 0.40,
+          ),
+          Container(
+            height: h * 0.48,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xff190252),
+                  Colors.white,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
-              child: const Center(
-                  child: Text(
-                "Register now",
+            ),
+            child: Center(
+              child: Text(
+                "",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  fontSize: w / 15,
                 ),
-              )),
+              ),
             ),
           ),
         ],
       ),
     );
   }
-} 
+}

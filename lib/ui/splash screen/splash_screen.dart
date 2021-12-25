@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(const Duration(seconds: 3), () {});
+    await Future.delayed(const Duration(milliseconds: 3350), () {});
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
   }
@@ -26,21 +26,28 @@ class _SplashScreenState extends State<SplashScreen> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: w * 0.30),
-            child: SizedBox(
-              height: h * 0.20,
-              width: w * 0.60,
-              child: Image.asset(
-                'assets/projections_logo_anime.gif',
-                fit: BoxFit.cover,
-              ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+            colors: [
+              Colors.white,
+              Colors.white,
+              Colors.deepPurple,
+            ],
+          ),
+        ),
+        child: Center(
+          child: SizedBox(
+            height: h * 0.15,
+            width: w * 0.30,
+            child: Image.asset(
+              'assets/projections_logo_anime.gif',
+              fit: BoxFit.cover,
             ),
           ),
-        ],
+        ),
       ),
     );
   }

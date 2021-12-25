@@ -18,7 +18,7 @@ class OnBoardingScreen extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: h * 0.85,
+            height: h * 0.89,
             child: PageView(
               controller: _controller,
               children: const [
@@ -29,16 +29,16 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: h * 0.05,
+            height: h * 0.03,
           ),
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
             effect: JumpingDotEffect(
               spacing: w * 0.04,
-              activeDotColor: Colors.blue,
-              dotColor: Colors.cyan,
-              dotHeight: h * 0.018,
+              activeDotColor: Colors.deepPurpleAccent.shade400,
+              dotColor: Colors.deepPurple.shade800,
+              dotHeight: h * 0.016,
               dotWidth: w * 0.035,
               jumpScale: h * 0.0025,
               strokeWidth: w * 0.02,

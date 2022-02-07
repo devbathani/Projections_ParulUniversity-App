@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projections/ui/onBoarding/onBoarding_page.dart';
+import 'package:projections/ui/splash%20screen/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,7 +18,11 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetohome() async {
     await Future.delayed(const Duration(milliseconds: 3350), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+    );
   }
 
   @override
@@ -26,18 +30,9 @@ class _SplashScreenState extends State<SplashScreen> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            colors: [
-              Colors.white,
-              Colors.white,
-              Colors.deepPurple,
-            ],
-          ),
-        ),
         child: Center(
           child: SizedBox(
             height: h * 0.15,

@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:loading_indicator/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -27,6 +27,8 @@ class CommonWebViewState extends State<CommonWebView> {
 
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return WillPopScope(
       onWillPop: () async {
         final shouldPop = await showWarning(context);
@@ -42,7 +44,7 @@ class CommonWebViewState extends State<CommonWebView> {
                 javascriptMode: JavascriptMode.unrestricted,
                 zoomEnabled: true,
                 userAgent:
-                    'Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36',
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36',
                 onPageStarted: (_) {
                   setState(() {
                     isLoading = true;
@@ -71,9 +73,8 @@ class CommonWebViewState extends State<CommonWebView> {
               isLoading
                   ? const Center(
                       child: CircularProgressIndicator(
-                        color: Colors.cyanAccent,
-                      ),
-                    )
+                      color: Color.fromARGB(255, 19, 219, 241),
+                    ))
                   : const SizedBox.shrink()
             ],
           ),
@@ -95,13 +96,16 @@ class CommonWebViewState extends State<CommonWebView> {
         builder: (context) => AlertDialog(
           title: const Text('Do you want to exit the app ?'),
           backgroundColor: Colors.white,
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
             color: Colors.black,
             fontSize: 17.5,
           ),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(6.0))),
-          contentPadding: EdgeInsets.only(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(6.0),
+            ),
+          ),
+          contentPadding: const EdgeInsets.only(
             top: 10.0,
             bottom: 10.0,
           ),

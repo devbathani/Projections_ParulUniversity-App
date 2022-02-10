@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projections/ui/splash%20screen/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -30,19 +33,31 @@ class _SplashScreenState extends State<SplashScreen> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Center(
-          child: SizedBox(
-            height: h * 0.15,
-            width: w * 0.30,
+      body: Stack(
+        children: [
+          SizedBox(
+            height: h,
+            width: w,
             child: Image.asset(
-              'assets/projections_logo_anime.gif',
+              'assets/hero_bg.png',
               fit: BoxFit.cover,
             ),
           ),
-        ),
+          Positioned(
+            bottom: h * 0.05,
+            left: w * 0.25,
+            child: Text(
+              "Projections",
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: w / 11,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
